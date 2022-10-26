@@ -117,7 +117,7 @@ class CacheIndicesManager {
   std::unordered_map<long, CacheNode> /*                 */ cpu_cache_map_;
   // FreqNodes sorted by freq
   std::list<CacheNode*> /*                               */ freq_list_;
-  // freq -> the last freq_list_ iterator with that freq
+  // freq -> the last freq_list_ iterator holding that freq
   std::unordered_map<long, std::list<CacheNode*>::iterator> freq_entry_;
   //
   std::stack<long> /*                                    */ available_cache_idxs_;
