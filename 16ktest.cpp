@@ -1,15 +1,17 @@
-#include <experimental/random>
-#include "cache_mgr.h"
 #include <chrono>
+#include <experimental/random>
+
+#include "cache_mgr.h"
+#include "sort_cache_mgr.h"
 
 #define CacheRowNum 16384
-#define RandRange 163840
+#define RandRange 16384
 
 using namespace std;
 using namespace chrono;
 
 int main() {
-  CacheIndicesManager mgr(CacheRowNum);
+  SortCacheIndicesManager mgr(CacheRowNum);
   long request[CacheRowNum];
 
   double cache_op_time = 0.0;

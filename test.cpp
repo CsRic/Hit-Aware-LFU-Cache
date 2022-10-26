@@ -1,5 +1,5 @@
 #include "cache_mgr.h"
-
+#include "sort_cache_mgr.h"
 template <typename T>
 void print_vector(std::vector<T> v) {
   for (auto i : v) {
@@ -22,7 +22,7 @@ void print_cache_instruction(CacheInstruction inst) {
   std::cout << std::endl;
 }
 
-void op(CacheIndicesManager& mgr, long request[], long n) {
+void op(SortCacheIndicesManager& mgr, long request[], long n) {
   std::cout << "incoming request: ";
   for (long i = 0; i < n; i++) {
     std::cout << request[i] << " ";
@@ -34,7 +34,7 @@ void op(CacheIndicesManager& mgr, long request[], long n) {
 }
 
 int main() {
-  CacheIndicesManager mgr(4);
+  SortCacheIndicesManager mgr(4);
   {
     long request[] = {0, 1, 2, 3, 3, 3, 3, 2, 2, 3, 2, 1, 1, 0};
     long n = sizeof(request) / sizeof(request[0]);
