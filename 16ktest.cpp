@@ -3,14 +3,15 @@
 #include <chrono>
 
 #define CacheRowNum 16384
-#define RandRange 16384
+#define RandRange 163840
 
 using namespace std;
 using namespace chrono;
 
 int main() {
-  CacheIndicesManager mgr(16384);
-  long request[16384];
+  CacheIndicesManager mgr(CacheRowNum);
+  long request[CacheRowNum];
+
   double cache_op_time = 0.0;
   int repeat = 100;
   for (int epoch = 0; epoch < repeat; epoch++) {
