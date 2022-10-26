@@ -156,11 +156,9 @@ class CacheIndicesManager {
       }
     } else if (std::next(freq_it) != freq_list_.end() && (*std::next(freq_it))->freq < new_freq) {
       // reorder link list. move freq_it to next(freq2)
-      auto const& freq_it2 = freq_entry_[(*std::next(freq_it))->freq];
+      auto const& freq_it2 = std::next(freq_entry_[(*std::next(freq_it))->freq]);
       // swap trick
-      auto it_temp = std::next(freq_it2);
-      freq_list_.splice(std::next(freq_it), freq_list_, freq_it2);
-      freq_list_.splice(it_temp, freq_list_, freq_it);
+      freq_list_.splice(freq_it2, freq_list_, freq_it);
     }
   }
 

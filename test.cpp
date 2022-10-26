@@ -56,7 +56,7 @@ int main() {
     op(mgr, request, n);
   }
   {
-    long request[] = {11,12,13,12,11,12,13,12,11};
+    long request[] = {11, 12, 13, 12, 11, 12, 13, 12, 11};
     long n = sizeof(request) / sizeof(request[0]);
     op(mgr, request, n);
   }
